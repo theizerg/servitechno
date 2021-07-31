@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,10 +13,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['auth',])->group(function () {
+
+#############################################################################################
+##################  Administación del sistema   #############################################
+#############################################################################################
+   Route::get('/', 'HomeController@index')->name('home');
+   Route::resource('organismos', 'OrganismosController');
+   Route::resource('logins', 'LoginController');
+   Route::resource('/permission', 'PermissionController');
+   Route::resource('usuarios',   'UserController');
+   Route::get('logs', 'HomeController@logs')->name('logs');
+   Route::resource('roles',   'RolesController');
+   Route::DELETE('/notificaciones/borrar/{notificacion_id}', 'HomeController@borrarNotificacion')->name('borrarNotificacion');
+
+
+});

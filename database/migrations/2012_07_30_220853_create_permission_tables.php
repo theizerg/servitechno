@@ -26,6 +26,8 @@ class CreatePermissionTables extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('guard_name');
+            $table->smallInteger('organismo_id')->default(1);
+            $table->smallInteger('sucursal_id')->default(1);
             $table->timestamps();
         });
 
