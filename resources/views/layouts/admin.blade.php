@@ -78,7 +78,6 @@
          @include('layouts.partials.modal.tipoequipo.createtipoequipo')
          @include('layouts.partials.modal.marcas.createmarca')
          @include('layouts.partials.modal.modelos.createmodelo')
-        
          @include('layouts.partials.modal.usuario.createmodal')
          @include('layouts.partials.modal.organismo.modalorganismocreate')
         
