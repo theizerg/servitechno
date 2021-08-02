@@ -26,9 +26,7 @@ class AdminTableSeeder extends Seeder
 
         $organismo->save();
 
-
-        
-        \DB::table('sucursales')->insert([
+         \DB::table('sucursales')->insert([
             'nombre' => 'Caracas',
             'telefono' => '0424123456',
             'direccion' => 'La hoyada',
@@ -69,7 +67,208 @@ class AdminTableSeeder extends Seeder
             
         ]);
 
-        /*\DB::table('tipo_equipos')->insert([
+       \DB::table('estado_servicios')->insert([
+            'descripcion' => 'Por Reparar',
+            'status' => 1,
+        ]);
+
+
+       \DB::table('estado_servicios')->insert([
+            'descripcion' => 'Reparado',
+            'status' => 1,
+        ]);
+
+
+       \DB::table('estado_servicios')->insert([
+            'descripcion' => 'Revisado',
+            'status' => 1,
+        ]);
+
+        
+       \DB::table('estado_servicios')->insert([
+            'descripcion' => 'No Reparado',
+            'status' => 1,
+        ]);
+
+       \DB::table('estado_servicios')->insert([
+            'descripcion' => 'Reincidencia',
+            'status' => 1,
+        ]);
+
+       \DB::table('estado_servicios')->insert([
+            'descripcion' => 'Entregado, Reparado',
+            'status' => 1,
+        ]);
+
+       \DB::table('estado_servicios')->insert([
+            'descripcion' => 'Entregado, No Reparado',
+            'status' => 1,
+        ]);
+
+
+
+
+
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'CAMBIO DE TOUCH',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'CAMBIO DE DISPLAY',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'CAMBIO DE BOCINAS',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'CAMBIO DE CENTRO DE CARGA',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'RESTAURACION DE SOFTWARE',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'DESBLOQUEO DE SISTEMA',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'IUIUIUIIUI',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'JHJHJ',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'HJHJHJHJHJ',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'CAMBIO DE PANTALLA COMPLETA',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'NIVEL COMPONENTES',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'CENTRO DE CARGA',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'DISPLAY COMPLETO',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+
+        \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'CAMBIO DE AURICULAR',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+
+         \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'CAMBIO DE AURICULAR',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+
+         \DB::table('tipo_reparaciones')->insert([
+            'descripcion' => 'CAMBIO DE MICROFONO',
+            'fecha' => date('d/m/Y'),
+            'status' => 1,
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+        ]);
+
+
+       
+
+        \DB::table('tipo_equipos')->insert([
             'descripcion' => 'SMARTPHONE',
             'status' => 1,
             'organismo_id' => 1,
@@ -107,7 +306,7 @@ class AdminTableSeeder extends Seeder
             'organismo_id' => 1,
             'fecha' => date('d/m/Y H:m:s'),
             'sucursal_id' => 1
-        ]);*/
+        ]);
         
         
         $user = new User;
@@ -168,5 +367,30 @@ class AdminTableSeeder extends Seeder
         $user->save();
 
         $user->assignRole('Premium');
+
+
+          \DB::table('clientes')->insert([
+            'name' => 'Carlos Miguel',
+            'telefono' => '04244224554',
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+          ]);
+  
+          \DB::table('clientes')->insert([
+            'name' => 'Elida Lugo',
+            'telefono' => '04241234554',
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+          ]);
+
+           \DB::table('clientes')->insert([
+            'name' => 'Arminda Lugo',
+            'telefono' => '04241703465',
+            'organismo_id' => 1,
+            'sucursal_id' => 1,
+            
+          ]);
     }
 }

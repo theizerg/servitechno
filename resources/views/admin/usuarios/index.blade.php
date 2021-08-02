@@ -51,10 +51,10 @@
                  <a class="btn btn-round blue darken-4" data-toggle="tooltip" data-placement="top"
                       title="Ver datos del usuario." href="{{ url('usuarios', [$user->encode_id]) }}"><i class="mdi mdi-face text-center" style="color: white;"></i> </a>
                  @endcan
-                @can('EditarUsuario')
+                @if(Auth::user()->hasrole('Super Administrador') && Auth::user()->id != $user->id)
                  <a  data-toggle="modal" data-target="#updateMarca{{$user->encode_id}} " class="btn btn-round blue darken-4"><i class="mdi mdi-pencil mt-2 text-white" data-toggle="tooltip" data-placement="top"
                       title="Editar datos del usuario."></i></a>
-               @endcan
+               @endif
                  
               </td>
               </tr>

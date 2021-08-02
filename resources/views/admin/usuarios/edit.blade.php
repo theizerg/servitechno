@@ -47,7 +47,7 @@
                 <input class="form-control" id="email" name="email" value="{{ $user->email }}" placeholder="Correo electrónico">
                 <span class="missing_alert text-danger" id="email_alert"></span>
               </div>
-              @if(Auth::user()->hasrole('Administrador') && Auth::user()->id != $user->id)
+              @if(Auth::user()->hasrole('Super Administrador') && Auth::user()->id != $user->id)
               <div class="form-group">
                 <label for="role">Tipo de usuario</label>
                 <div class="checkbox icheck">

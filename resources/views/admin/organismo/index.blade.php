@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Menú')
+@section('title', 'Organismo')
 @section('content')
 <div class="row">
   <div class="ml-3 col-md-6">

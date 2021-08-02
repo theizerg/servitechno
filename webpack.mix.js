@@ -25,6 +25,12 @@ mix.styles([
     'node_modules/icheck/skins/square/blue.css',
     'node_modules/@dlghq/pace-progress/themes/blue/pace-theme-minimal.css',
     'node_modules/otika/assets/css/components.css',
+    'node_modules/otika/assets/bundles/select2/dist/css/select2.min.css',
+    'node_modules/otika/assets/bundles/bootstrap-daterangepicker/daterangepicker.css',
+    'node_modules/otika/assets/bundles/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css',
+    'node_modules/otika/assets/bundles/jquery-selectric/selectric.css',
+    'node_modules/otika/assets/bundles/bootstrap-timepicker/css/bootstrap-timepicker.min.css',
+    'node_modules/otika/assets/bundles/bootstrap-tagsinput/dist/bootstrap-tagsinput.css',
 
     ], 'public/css/app.css');
 
@@ -43,7 +49,17 @@ mix.scripts([
     'node_modules/otika/assets/bundles/datatables/export-tables/vfs_fonts.js',
     'node_modules/otika/assets/bundles/datatables/export-tables/buttons.print.min.js',
     'node_modules/icheck/icheck.js',
-
-    
+    'node_modules/otika/assets/bundles/cleave-js/dist/cleave.min.js',
+    'node_modules/otika/assets/bundles/cleave-js/dist/addons/cleave-phone.us.js',
+    'node_modules/otika/assets/bundles/jquery-pwstrength/jquery.pwstrength.min.js',
+    'node_modules/otika/assets/bundles/bootstrap-daterangepicker/daterangepicker.js',
+    'node_modules/otika/assets/bundles/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js',
+    'node_modules/otika/assets/bundles/bootstrap-timepicker/js/bootstrap-timepicker.min.js',
+    'node_modules/otika/assets/bundles/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js',
+    'node_modules/otika/assets/bundles/select2/dist/js/select2.full.min.js',
+    'node_modules/otika/assets/bundles/jquery-selectric/jquery.selectric.min.js',
+    'node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js',
+    'node_modules/admin-lte/plugins/jquery-validation/jquery.validate.min.js',
+    'node_modules/admin-lte/plugins/jquery-validation/additional-methods.min.js',
 
 ], 'public/js/app.js');

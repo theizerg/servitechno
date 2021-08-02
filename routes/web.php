@@ -24,7 +24,7 @@ Route::middleware(['auth',])->group(function () {
    Route::resource('organismos', 'OrganismosController');
    Route::resource('logins', 'LoginController');
    Route::resource('/permission', 'PermissionController');
-   Route::resource('usuarios',   'UsuariosController');
+   Route::resource('usuarios',   'UserController');
    Route::get('logs', 'HomeController@logs')->name('logs');
    Route::get('modulo/borrar/{modulo_id}', 'ModulosController@borrar');
    Route::resource('roles',   'RolesController');
@@ -187,6 +187,28 @@ Route::resource('tipoequipos', 'TipoEquiposController');
 #############################################################################################
 #############################################################################################
 #############################################################################################
+#
+#
+#
+#
+#############################################################################################
+################################# MOD REGISTRO DE PROVEEDORES ###############################
+#############################################################################################
+  
+  Route::get('/ordenservicios', 'OrdenServicioController@index');
+  Route::get('/clientes/{cliente_id}', 'OrdenServicioController@clientes');
+  Route::get('/equipos/{marca_id}', 'OrdenServicioController@marca');
+  Route::get('/marcas/{marca_id}/modelos', 'OrdenServicioController@modelos');
+  Route::post('/ordenservicios/guardar', 'OrdenServicioController@guardar');
+  Route::get('/ordenservicios/reparar', 'OrdenServicioController@reparar');
+  Route::get('/ordenservicios/reparados', 'OrdenServicioController@reparados');
+  Route::get('/ordenservicios/noreparados', 'OrdenServicioController@noreparados');
+  Route::get('/ordenservicios/reincidencias', 'OrdenServicioController@reincidencia');
+  Route::get('/ordenservicios/revisado', 'OrdenServicioController@revisado');
+  Route::get('/ordenservicios/entregados', 'OrdenServicioController@entregado');
+  Route::get('/ordenservicios/historial/{orden_id}', 'OrdenServicioController@historial');
+  Route::put('/ordenservicios/guardar/{orden_id}', 'OrdenServicioController@editar');
+
 #
 #
 #

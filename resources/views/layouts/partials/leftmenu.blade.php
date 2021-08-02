@@ -119,16 +119,16 @@
         @can('VerReparaciones')
         <ul class="dropdown-menu">
           <li class="dropdown">
-            <a href="#" class="has-dropdown"><i class="fas fa-phone"></i>Reparaciones</a>
+            <a href="#" class="has-dropdown"><i class="fas fa-phone"></i>Orden de servicio</a>
             <ul class="dropdown-menu">
               @can('VerReparaciones')
               <li>
-                <a href="{{url('/reparaciones')}}"><i class="fas fa-list"></i>Ver listado</a>
+                <a href="{{url('/ordenservicios')}}"><i class="fas fa-list"></i>Ver listado</a>
               </li>
               @endcan
               @can('RegistrarReparaciones')
               <li>
-                <a href="{{url('/reparaciones/create')}}"><i class="fas fa-plus-square"></i>Nueva reparación</a>
+                <a href="{{url('/ordenservicios/create')}}"><i class="fas fa-plus-square"></i>Nueva reparación</a>
               </li>
               @endcan
             </ul>
