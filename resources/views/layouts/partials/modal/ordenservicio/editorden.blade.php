@@ -19,7 +19,7 @@
                  </div>
                </div>
                @php
-               $equipos =App\Models\EstadoServicio::get();
+               $equipos = App\Models\EstadoServicio::get();
                @endphp
                <select name="tipo_equipo_id" class="form-control">
                  <option value="0" selected>Seleccione el tipo de equipo</option>

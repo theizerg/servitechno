@@ -18,12 +18,12 @@ class OrdenServicioController extends Controller
    public function index()
    {
 
-     $ordenservicios = OrdenServicio::where('organismo_id',\Auth::user()->organismo_id)
+      $ordenes = OrdenServicio::where('organismo_id',\Auth::user()->organismo_id)
      ->where('sucursal_id', \Auth::user()->sucursal_id)
      ->get();
 
      
-     return view ('admin.ordenservicios.index', compact('ordenservicios'));
+     return view ('admin.ordenservicios.index', compact('ordenes'));
 
 
    }
@@ -104,7 +104,7 @@ class OrdenServicioController extends Controller
             'message' => '¡Datos ingresados!',
             'alert-type' => 'success'
            );
-          return redirect('/ordenservicios/reparar')->with($notification);
+          return redirect()->back()->with($notification);
 
 
          }
@@ -154,84 +154,9 @@ class OrdenServicioController extends Controller
 
 
          }
-         
-      
-
 
    }
 
-
-    public function reparar()
-   {
-
-     $ordenes = OrdenServicio::where('organismo_id',\Auth::user()->organismo_id)
-     ->where('sucursal_id', \Auth::user()->sucursal_id)
-     ->where('estado_servicio_id',1)
-     ->get();
-
-    return view('admin.ordenservicios.reparar',compact('ordenes'));
-   }
-
-
-   public function reparados()
-   {
-
-     $ordenes = OrdenServicio::where('organismo_id',\Auth::user()->organismo_id)
-     ->where('sucursal_id', \Auth::user()->sucursal_id)
-     ->where('estado_servicio_id',2)
-     ->get();
-
-    return view('admin.ordenservicios.reparado',compact('ordenes'));
-   }
-
-
-    public function noreparados()
-   {
-
-     $ordenes = OrdenServicio::where('organismo_id',\Auth::user()->organismo_id)
-     ->where('sucursal_id', \Auth::user()->sucursal_id)
-     ->where('estado_servicio_id',4)
-     ->get();
-
-    return view('admin.ordenservicios.noreparados',compact('ordenes'));
-   }
-
-
-   public function reincidencia()
-   {
-
-     $ordenes = OrdenServicio::where('organismo_id',\Auth::user()->organismo_id)
-     ->where('sucursal_id', \Auth::user()->sucursal_id)
-     ->where('estado_servicio_id',5)
-     ->get();
-
-    return view('admin.ordenservicios.reincidencia',compact('ordenes'));
-   }
-
-
-    public function revisado()
-   {
-
-     $ordenes = OrdenServicio::where('organismo_id',\Auth::user()->organismo_id)
-     ->where('sucursal_id', \Auth::user()->sucursal_id)
-     ->where('estado_servicio_id',3)
-     ->get();
-
-    return view('admin.ordenservicios.revisado',compact('ordenes'));
-   }
-
-
-   public function entregado()
-   {
-
-     $ordenes = OrdenServicio::where('organismo_id',\Auth::user()->organismo_id)
-     ->where('sucursal_id', \Auth::user()->sucursal_id)
-     ->where('estado_servicio_id', '>', 5)
-     ->get();
-
-
-    return view('admin.ordenservicios.entregado',compact('ordenes'));
-   }
 
 
   public function historial($id)
@@ -288,4 +213,10 @@ class OrdenServicioController extends Controller
     return view('admin.ordenservicios.equipo.historial',compact('mes','historiales'));
    }
 
+
+   public function nuevo()
+   {
+
+    return view ('admin.ordenservicios.nuevo');
+   }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Modulo;
+use App\Models\Organismos;
 
 class HomeController extends Controller
 {
@@ -24,7 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-       
-        return view('admin.home.index');
+       if (\Auth::user()->hasRole('Super Administrador')) {
+           return view('admin.home.index');
+       }
+       else{
+        $organismo = Organismos::find(\Auth::user()->organismo_id);
+        return view('admin.home.index',compact('organismo') );
+       }
     }
 }

@@ -73,7 +73,8 @@
         
             @yield('content')
 
-
+         @include('layouts.partials.modal.roles.createrole')
+         @include('layouts.partials.modal.ordenservicio.createorden')
          @include('layouts.partials.modal.tiporeparacion.createtiporeparacion')
          @include('layouts.partials.modal.tipoequipo.createtipoequipo')
          @include('layouts.partials.modal.marcas.createmarca')

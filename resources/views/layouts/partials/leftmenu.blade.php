@@ -1,234 +1,144 @@
 <ul class="sidebar-menu">
- <li class="menu-header">Opciones generales</li>
+ <li class="menu-header">Punto de venta</li>
 <li class="dropdown ">
-  <a href="{{url('/')}}" class="nav-link"><i data-feather="home"></i><span>Inicio</span></a>
+  <a href="{{url('/')}}" class="nav-link "><i data-feather="home"></i><span>Inicio</span></a>
 </li>
- <li class="dropdown show active">
+ <li class="dropdown ">
   @can('VerUsuario')
-  <a href="#" class="menu-toggle nav-link has-dropdown"><i
+  <a href="#" class="menu-toggle nav-link has-dropdown "><i
       data-feather="settings"></i><span>Administración</span></a>
      
-     <ul class="dropdown-menu">
-      <li class="dropdown">
-        <a href="#" class="has-dropdown"><i class="fas fa-user"></i>Usuarios</a>
-        @can('VerUsuario')
-        <ul class="dropdown-menu">
-          <li><a href="{{url('usuarios')}}"><i class="fas fa-list"></i>Ver listado</a></li>
-        </ul>
-        @endcan
-     </li>
-  </ul>
+     @can('VerUsuario')
+      <ul class="dropdown-menu">
+        <li class="dropdown">
+            @can('VerUsuario')
+              <a href="{{url('usuarios')}}"><i class="fas fa-user"></i>Usuarios</a>
+            @endcan
+      </li>
+    </ul>
+    @endcan
    @endcan
     @can('VerRole')
       <ul class="dropdown-menu">
         <li class="dropdown">
-          <a href="#" class="has-dropdown"><i class="fas fa-user-lock"></i>Roles</a>
-          <ul class="dropdown-menu">
             @can('VerRole')
-            <li>
-              <a href="{{url('/roles')}}"><i class="fas fa-list"></i>Ver listado</a>
-            </li>
+              <a href="{{url('/roles')}}"><i class="fas fa-user-lock"></i>Roles</a>
             @endcan
-            @can('RegistrarRole')
-            <li>
-              <a href="{{url('/roles/create')}}"><i class="fas fa-plus-square"></i>Nuevo Role</a>
-            </li>
-            @endcan
-          </ul>
       </li>
     </ul>
     @endcan
     @can('VerOrganismo')
       <ul class="dropdown-menu">
         <li class="dropdown">
-          <a href="#" class="has-dropdown"><i class="fas fa-building"></i>Organismos</a>
-          <ul class="dropdown-menu">
             @can('VerOrganismo')
-            <li>
-              <a href="{{url('/organismos')}}"><i class="fas fa-list"></i>Ver listado</a>
-            </li>
+              <a href="{{url('organismos')}}"><i class="fas fa-building"></i>Organismos</a>
             @endcan
-          </ul>
       </li>
     </ul>
     @endcan
   </li>
-  <li class="dropdown show active">
+  <li class="dropdown ">
   <a href="#" class="menu-toggle nav-link has-dropdown"><i
       data-feather="settings"></i><span>Registros principales</span></a>
     @can('VerMarca')
-    <ul class="dropdown-menu">
-      <li class="dropdown">
-        <a href="#" class="has-dropdown"><i class="mdi mdi-phone-classic"></i>Tipo de equipos</a>
-        <ul class="dropdown-menu">
-          @can('VerMarca')
-          <li>
-            <a href="{{url('/tipoequipos')}}"><i class="fas fa-list"></i>Ver listado</a>
-          </li>
-          @endcan
-        </ul>
-    </li>
-  </ul>
-  @endcan
+      <ul class="dropdown-menu">
+        <li class="dropdown">
+            @can('VerMarca')
+              <a href="{{url('tipoequipos')}}"><i class="fas fa-laptop"></i>Tipo de equipos</a>
+            @endcan
+      </li>
+    </ul>
+    @endcan
   @can('VerMarca')
-  <ul class="dropdown-menu">
-    <li class="dropdown">
-      <a href="#" class="has-dropdown"><i class="fab fa-apple"></i>Marcas</a>
       <ul class="dropdown-menu">
-        @can('VerMarca')
-        <li>
-          <a href="{{url('/marcas')}}"><i class="fas fa-list"></i>Ver listado</a>
-        </li>
-        @endcan
-      </ul>
-  </li>
-</ul>
-@endcan
-@can('VerModelo')
-  <ul class="dropdown-menu">
-    <li class="dropdown">
-      <a href="#" class="has-dropdown"><i class="mdi mdi-smart-card-outline"></i>Modelos</a>
+        <li class="dropdown">
+            @can('VerMarca')
+              <a href="{{url('marcas')}}"><i class="fab fa-apple"></i>Marcas</a>
+            @endcan
+      </li>
+    </ul>
+    @endcan
+    @can('VerModelo')
       <ul class="dropdown-menu">
-        @can('VerModelo')
-        <li>
-          <a href="{{url('/modelos')}}"><i class="fas fa-list"></i>Ver listado</a>
-        </li>
-        @endcan
-      </ul>
-  </li>
-</ul>
-  @endcan
+        <li class="dropdown">
+            @can('VerModelo')
+              <a href="{{url('modelos')}}"><i class="fab fa-google"></i>Modelos</a>
+            @endcan
+      </li>
+    </ul>
+    @endcan
   @can('VerTipoReparaciones')
-    <ul class="dropdown-menu">
-      <li class="dropdown">
-        <a href="#" class="has-dropdown"><i class="mdi mdi-server"></i>Servicios</a>
-        <ul class="dropdown-menu">
-          @can('VerModelo')
-          <li>
-            <a href="{{url('/tiporeparaciones')}}"><i class="fas fa-list"></i>Ver listado</a>
-          </li>
-          @endcan
-        </ul>
-    </li>
-  </ul>
-  @endcan
+      <ul class="dropdown-menu">
+        <li class="dropdown">
+            @can('VerTipoReparaciones')
+              <a href="{{url('tiporeparaciones')}}"><i class="fas fa-server"></i>Servicios</a>
+            @endcan
+      </li>
+    </ul>
+    @endcan
   </li>
-  <li class="dropdown show active">
+  <li class="dropdown  ">
     <a href="#" class="menu-toggle nav-link has-dropdown"><i
-        data-feather="settings"></i><span>Opciones generales</span></a>
-        @can('VerReparaciones')
-        <ul class="dropdown-menu">
-          <li class="dropdown">
-            <a href="#" class="has-dropdown"><i class="fas fa-phone"></i>Orden de servicio</a>
-            <ul class="dropdown-menu">
-              @can('VerReparaciones')
-              <li>
-                <a href="{{url('/ordenservicios')}}"><i class="fas fa-list"></i>Ver listado</a>
-              </li>
-              @endcan
-              @can('RegistrarReparaciones')
-              <li>
-                <a href="{{url('/ordenservicios/create')}}"><i class="fas fa-plus-square"></i>Nueva reparación</a>
-              </li>
-              @endcan
-            </ul>
-        </li>
-      </ul>
-      @endcan
-      @can('VerListaDePrecios')
-        <ul class="dropdown-menu">
-          <li class="dropdown">
-            <a href="#" class="has-dropdown"><i class="fas fa-dollar-sign"></i>Lista de precios</a>
-            <ul class="dropdown-menu">
-              @can('VerListaDePrecios')
-              <li>
-                <a href="{{url('/precios')}}"><i class="fas fa-list"></i>Ver listado</a>
-              </li>
-              @endcan
-              
-            </ul>
-        </li>
-      </ul>
-      @endcan
-      @can('VerListaDePrecios')
-        <ul class="dropdown-menu">
-          <li class="dropdown">
-            <a href="#" class="has-dropdown"><i class="fas fa-cash-register"></i>Punto de Venta</a>
-            <ul class="dropdown-menu">
-              @can('VerVenta')
-              <li>
-                <a href="{{url('/venta')}}"><i class="fas fa-list"></i>Ver listado</a>
-              </li>
-              @endcan
-              @can('RegistrarVenta')
-              <li>
-                <a href="{{url('/venta/nevo')}}"><i class="fas fa-plus-square"></i>Nueva venta</a>
-              </li>
-              @endcan
-              
-            </ul>
-        </li>
-      </ul>
-      @endcan
-      @can('VerProductos')
-      <ul class="dropdown-menu">
-        <li class="dropdown">
-          <a href="#" class="has-dropdown"><i class="fas fa-store-alt"></i>Productos</a>
+        data-feather="settings"></i><span>Punto de venta</span></a>
+         @can('VerCaja')
           <ul class="dropdown-menu">
-            @can('VerProductos')
-            <li>
-              <a href="{{url('/productos')}}"><i class="fas fa-list"></i>Ver listado</a>
-            </li>
-            @endcan
-            @can('RegistrarProductos')
-            <li>
-              <a href="{{url('/productos/nevo')}}"><i class="fas fa-plus-square"></i>Nuevo producto</a>
-            </li>
-            @endcan
-            
-          </ul>
-      </li>
-    </ul>
+             <li class="dropdown">
+               @can('VerCaja')
+                <a href="{{url('cajas')}}"><i class="fas fa-cash-register"></i>Cajas</a>
+               @endcan
+             </li>
+         </ul>
     @endcan
-    @can('VerProveedores')
-      <ul class="dropdown-menu">
-        <li class="dropdown">
-          <a href="#" class="has-dropdown"><i class="fas fa-truck-moving"></i>Proveedores</a>
+         @can('VerProductos')
           <ul class="dropdown-menu">
-            @can('VerProveedores')
-            <li>
-              <a href="{{url('/proveedores')}}"><i class="fas fa-list"></i>Ver listado</a>
-            </li>
-            @endcan
-            @can('RegistrarProveedores')
-            <li>
-              <a href="{{url('/proveedores/nevo')}}"><i class="fas fa-plus-square"></i>Nuevo proveedor</a>
-            </li>
-            @endcan
-          </ul>
-      </li>
-    </ul>
+             <li class="dropdown">
+               @can('VerProductos')
+                <a href="{{url('productos')}}"><i class="fas fa-store-alt"></i>Productos</a>
+               @endcan
+             </li>
+         </ul>
     @endcan
-    @can('VerClientes')
-    <ul class="dropdown-menu">
-      <li class="dropdown">
-        <a href="#" class="has-dropdown"><i class="fas fa-handshake"></i>Clientes</a>
-        <ul class="dropdown-menu">
-          @can('VerClientes')
-          <li>
-            <a href="{{url('/clientes')}}"><i class="fas fa-list"></i>Ver listado</a>
-          </li>
-          @endcan
-          @can('RegistrarClientes')
-          <li>
-            <a href="{{url('/clientes/nevo')}}"><i class="fas fa-plus-square"></i>Nuevo cliente</a>
-          </li>
-          @endcan
-        </ul>
-    </li>
-  </ul>
-  @endcan
-    </li>
+     @can('VerProveedores')
+          <ul class="dropdown-menu">
+             <li class="dropdown">
+               @can('VerProveedores')
+                <a href="{{url('proveedores')}}"><i class="fas fa-truck-moving"></i>Proveedores</a>
+               @endcan
+             </li>
+         </ul>
+    @endcan
+     @can('VerClientes')
+          <ul class="dropdown-menu">
+             <li class="dropdown">
+               @can('VerClientes')
+                <a href="{{url('clientes')}}"><i class="fas fa-handshake"></i>Clientes</a>
+               @endcan
+             </li>
+         </ul>
+    @endcan
+  </li>
+  <li class="dropdown  ">
+    <a href="#" class="menu-toggle nav-link has-dropdown"><i
+        data-feather="settings"></i><span>Reparaciones</span></a>
+         @can('VerReparaciones')
+          <ul class="dropdown-menu">
+             <li class="dropdown">
+               @can('VerReparaciones')
+                <a href="{{url('ordenservicios')}}"><i class="fas fa-phone"></i>Orden de servicio</a>
+               @endcan
+             </li>
+         </ul>
+    @endcan
+     @can('VerListaDePrecios')
+          <ul class="dropdown-menu">
+             <li class="dropdown">
+               @can('VerListaDePrecios')
+                <a href="{{url('precios')}}"><i class="fas fa-list"></i>Lista de precios</a>
+               @endcan
+             </li>
+         </ul>
+    @endcan
+  </li>
 </ul> 
 @push('scripts')
 <script>

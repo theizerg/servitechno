@@ -408,6 +408,40 @@
                           </label>
                         </div>
                       </td>
+                      <td>
+                        Ver Caja</br>
+                        <div class="checkbox icheck">
+                          <label>
+                            <input type="checkbox" name="permissions[]" value="RegistrarCaja" {{ $role->hasPermissionTo('RegistrarCaja') ? 'checked' : '' }}>
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        Registrar Caja</br>
+                        <div class="checkbox icheck">
+                          <label>
+                            <input type="checkbox" name="permissions[]" value="RegistrarCaja" {{ $role->hasPermissionTo('RegistrarCaja') ? 'checked' : '' }}>
+                          </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Editar Caja</br>
+                        <div class="checkbox icheck">
+                          <label>
+                            <input type="checkbox" name="permissions[]" value="EditarCaja" {{ $role->hasPermissionTo('EditarCaja') ? 'checked' : '' }}>
+                          </label>
+                        </div>
+                      </td>
+                       <td>
+                        Eliminar Caja</br>
+                        <div class="checkbox icheck">
+                          <label>
+                            <input type="checkbox" name="permissions[]" value="EliminarCaja" {{ $role->hasPermissionTo('EliminarCaja') ? 'checked' : '' }}>
+                          </label>
+                        </div>
+                      </td>
                     </tr>
                   </table>
                   <div class="card-footer clearfix"></div>

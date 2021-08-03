@@ -208,7 +208,7 @@ Route::resource('tipoequipos', 'TipoEquiposController');
   Route::get('/ordenservicios/entregados', 'OrdenServicioController@entregado');
   Route::get('/ordenservicios/historial/{orden_id}', 'OrdenServicioController@historial');
   Route::put('/ordenservicios/guardar/{orden_id}', 'OrdenServicioController@editar');
-
+  Route::get('/ordenservicios/nuevo', 'OrdenServicioController@nuevo');
 #
 #
 #

@@ -3,15 +3,15 @@
 @section('title', 'Usuarios')
 @section('page_title', 'Usuarios')
 @section('content') 
-<section class="container">
+
     <div class="section-body">
        <div class="row">
 
       <div class="ml-3 col-md-6">
         <div class="btn-group">
          
-          <a  data-toggle="modal" data-target="#usuarioModal" class="btn btn-round blue darken-4"><i class="mdi mdi-plus mt-2 text-white" data-toggle="tooltip" data-placement="top"
-                      title="Registro de nuevo usuario."></i></a>
+          <a  data-toggle="modal" data-target="#usuarioModal" class="btn btn-lg blue darken-4 text-white"><i class="mdi mdi-plus mt-2 text-white" data-toggle="tooltip" data-placement="top"
+                      title="Registro de nuevo usuario."></i>Nuevo usuario</a>
          
         </div>
       </div>
@@ -69,7 +69,6 @@
         </div>
       </div>
     </div>
-</section>
 
 
 @endsection

@@ -99,6 +99,12 @@ class RolesAndPermissionsTableSeeder extends Seeder
                                 'RegistrarTipoReparaciones',
                                 'EditarTipoReparaciones',
                                 'EliminarTipoReparaciones',
+
+                                 /* Cajas */
+                                 'VerCaja',
+                                 'RegistrarCaja',
+                                 'EditarCaja',
+                                 'EliminarCaja',
                                   
  
 
@@ -127,6 +133,12 @@ class RolesAndPermissionsTableSeeder extends Seeder
                                     'RegistrarTipoReparaciones',
                                     'EditarTipoReparaciones',
                                     'EliminarTipoReparaciones',
+
+                                     /* Cajas */
+                                     'VerCaja',
+                                     'RegistrarCaja',
+                                     'EditarCaja',
+                                     'EliminarCaja',
                                   
 
                                     ];
@@ -159,6 +171,14 @@ class RolesAndPermissionsTableSeeder extends Seeder
                                     'RegistrarTipoReparaciones',
                                     'EditarTipoReparaciones',
                                     'EliminarTipoReparaciones',
+
+                                    /* Cajas */
+                                     'VerCaja',
+                                     'RegistrarCaja',
+                                     'EditarCaja',
+                                     'EliminarCaja',
+
+
 
                                     ];
 
@@ -208,6 +228,12 @@ class RolesAndPermissionsTableSeeder extends Seeder
                                      'RegistrarModelo',
                                      'EditarModelo',
                                      'EliminarModelo',
+
+                                     /* Cajas */
+                                     'VerCaja',
+                                     'RegistrarCaja',
+                                     'EditarCaja',
+                                     'EliminarCaja',
 
                                     /* TipoReparaciones */
                                     'VerTipoReparaciones',

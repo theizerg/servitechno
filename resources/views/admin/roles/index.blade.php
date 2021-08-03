@@ -2,12 +2,14 @@
 @section('title','Roles')
 @section('page_title', 'Listado de Roles')
 @section('content')
-<div class="container">
+
         <div class="col-md-6">
           <div class="btn-group">
            
            @can('RegistrarRole')
-            <a href="{{ url('roles/create') }}" class="btn blue darken-3 text-white "><i class="fa fa-plus-square"></i> Ingresar</a>  
+            <div class="btn-group">
+             <button type="button" class="btn btn-primary blue darken-4 mb-4" data-toggle="modal" data-target="#createModalRole"><i class="fa fa-plus-square"></i> Agregar role </button>
+             </div><br> 
            @endcan
           </div>
         </div>
@@ -74,5 +76,5 @@
    
       </div>
 
-</div>
+
 @endsection

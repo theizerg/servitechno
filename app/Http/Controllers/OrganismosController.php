@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Spatie\Permission\Models\Role;
 use App\Models\Organismos;
-use App\Models\Usuarios;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OrganismosController extends Controller
@@ -64,7 +64,7 @@ class OrganismosController extends Controller
         $organismos->save();
 
 
-         $user = new Usuarios();
+         $user = new User();
 
          $user->name = $request->nombre_propietario;
          $user->lastname = $request->apellido_propietario;
@@ -125,25 +125,39 @@ class OrganismosController extends Controller
          $organismos = Organismos::find($id);
 
 
-         $organismos->nombre_propietario = $request->nombre_propietario;
-         $organismos->apellido_propietario = $request->apellido_propietario;
-         $organismos->telefono_propietario = $request->telefono_propietario;
-         $organismos->nombre_negocio = $request->nombre_negocio;
-         $organismos->telefono_negocio = $request->telefono_negocio;
-         $organismos->username = $request->username;
-         $organismos->status = $request->status;
-         $organismos->role_id = $request->role_id;
+         $organismos->nombre_propietario = $organismos->nombre_propietario;
+         $organismos->apellido_propietario = $organismos->apellido_propietario;
+         $organismos->telefono_propietario = $organismos->telefono_propietario;
+         $organismos->nombre_negocio = $organismos->nombre_negocio;
+         $organismos->telefono_negocio = $organismos->telefono_negocio;
+         $organismos->username = $organismos->username;
+         $organismos->status = $organismos->status;
+         $organismos->role_id = $organismos->role_id;
+         $organismos->direccion = $request->direccion;
+         $organismos->razon_social = $request->razon_social;
+         $organismos->correo = $request->correo;
+         $organismos->nom_director = $request->nom_director;
+         $organismos->rfc = $request->rfc;
+         $organismos->cp = $request->cp;
 
-        $user = Usuarios::find($id);
+          //guardar imagen
+        $file = $request->file('photo');
+        //dd($file);
+        $path = public_path() . '/images/organismo/logo';
+        $fileName = uniqid() . $file->getClientOriginalName();
+        $moved = $file->move($path, $fileName);
+        $organismos->photo = $fileName;
 
-         $user->name = $request->nombre_propietario;
-         $user->lastname = $request->apellido_propietario;
-         $user->username = $request->username;
-         $user->status = $request->status;
-         $user->email = $request->username.'@mail.com';
-         $user->password = $request->password;
+        $user = User::find($id);
+
+         $user->name = $organismos->nombre_propietario;
+         $user->lastname = $organismos->apellido_propietario;
+         $user->username = $user->username;
+         $user->status = $user->status;
+         $user->email = $request->correo;
+         $user->password = $user->password;
          $user->organismo_id = $organismos->id; 
-         $user->role_id = $request->role_id; 
+         $user->role_id = $user->role_id; 
 
 
         if ($request->has('role_id'))

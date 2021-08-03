@@ -13,31 +13,30 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-
+ 
 
 mix.styles([
     'node_modules/otika/assets/css/app.min.css',
-    'node_modules/otika/assets/css/style.css',
+    
     'node_modules/@mdi/font/css/materialdesignicons.css',
     'node_modules/toastr/build/toastr.min.css',
     'node_modules/otika/assets/bundles/datatables/datatables.min.css',
     'node_modules/otika/assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css',
     'node_modules/icheck/skins/square/blue.css',
     'node_modules/@dlghq/pace-progress/themes/blue/pace-theme-minimal.css',
-    'node_modules/otika/assets/css/components.css',
-    'node_modules/otika/assets/bundles/select2/dist/css/select2.min.css',
     'node_modules/otika/assets/bundles/bootstrap-daterangepicker/daterangepicker.css',
     'node_modules/otika/assets/bundles/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css',
     'node_modules/otika/assets/bundles/jquery-selectric/selectric.css',
     'node_modules/otika/assets/bundles/bootstrap-timepicker/css/bootstrap-timepicker.min.css',
     'node_modules/otika/assets/bundles/bootstrap-tagsinput/dist/bootstrap-tagsinput.css',
-
+    'node_modules/otika/assets/bundles/select2/dist/css/select2.min.css',
+    'node_modules/otika/assets/css/style.css',
+    'node_modules/otika/assets/css/components.css',
     ], 'public/css/app.css');
 
 
 mix.scripts([
     'node_modules/otika/assets/js/app.min.js',
-    'node_modules/otika/assets/js/scripts.js',
     'node_modules/otika/assets/bundles/apexcharts/apexcharts.min.js',
     'node_modules/toastr/toastr.js',
     'node_modules/otika/assets/bundles/datatables/datatables.min.js',
@@ -61,5 +60,6 @@ mix.scripts([
     'node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js',
     'node_modules/admin-lte/plugins/jquery-validation/jquery.validate.min.js',
     'node_modules/admin-lte/plugins/jquery-validation/additional-methods.min.js',
+    'node_modules/otika/assets/js/scripts.js',
 
 ], 'public/js/app.js');

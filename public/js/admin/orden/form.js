@@ -17,7 +17,7 @@ $(document).ready(function() {
 $.fn.eventos = function(){
 
 
-  $('#cliente').unbind('change');//borro evento click
+
   $('#cliente').on("change", function(e) { //asigno el evento change u otro
    
     cliente_id = e.target.value;
@@ -33,7 +33,6 @@ $.fn.eventos = function(){
   });
 
 
- $('#tipoequipos').unbind('change');//borro evento click
   $('#tipoequipos').on("change", function(e) { //asigno el evento change u otro
    
     tipo_equipo_id = e.target.value;
@@ -48,7 +47,7 @@ $.fn.eventos = function(){
 
   });
 
-   $('#marcas').unbind('change');//borro evento click
+
   $('#marcas').on("change", function(e) { //asigno el evento change u otro
    
     marca_id = e.target.value;

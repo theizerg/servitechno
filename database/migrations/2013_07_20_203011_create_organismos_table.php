@@ -22,6 +22,13 @@ class CreateOrganismosTable extends Migration
             $table->string('telefono_negocio');
             $table->string('username');
             $table->string('status')->default(0);
+            $table->string('photo')->nullable();
+            $table->string('direccion')->nullable();
+            $table->string('razon_social')->nullable();
+            $table->string('correo')->nullable();
+            $table->string('nom_director')->nullable();
+            $table->string('rfc')->nullable();
+            $table->string('cp')->nullable();
             // role asociado
             $table->integer('role_id')->unsigned();
             $table->foreign('role_id')->references('id')->on('roles');
