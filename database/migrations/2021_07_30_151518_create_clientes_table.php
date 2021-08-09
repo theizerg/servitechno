@@ -17,6 +17,7 @@ class CreateClientesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('telefono');
+            $table->string('documento')->nullable();
             $table->integer('organismo_id')->unsigned()->nullable();
             $table->foreign('organismo_id')->references('id')->on('organismos');
             $table->integer('sucursal_id')->unsigned()->nullable();

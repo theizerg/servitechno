@@ -9,33 +9,25 @@
                 </button>
               </div>
               <div class="modal-body">
-                {!! Form::model(['route' => ['organismos.store'],'method' => 'POST']) !!}
-                  <div class="form-group">
+                {!! Form::open(['url' => ['/marcas/guardarajax'],'method' => 'POST','id'=>'marca']) !!}
+                  <div class="col-sm-12">
                     <label>Nombre de la marca</label>
                     <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="fab fa-apple"></i>
-                        </div>
-                      </div>
+                      
                       <input type="text" class="form-control" placeholder="Nombre de la marca"
                        name="descripcion">
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div class="col-sm-12">
                     <label>Tipo de equipo</label>
                      <div class="input-group">
-                       <div class="input-group-prepend">
-                         <div class="input-group-text">
-                           <i class="fas fa-lock"></i>
-                         </div>
-                       </div>
+                      
                        @php
                        $equipos =App\Models\TipoEquipos::where('organismo_id',\Auth::user()->organismo_id)
                        ->where('sucursal_id',\Auth::user()->sucursal_id)
                        ->get();
                        @endphp
-                       <select name="tipo_equipo_id" class="form-control">
+                       <select name="tipo_equipo_id" class="form-control select2" data-width="100%">
                          <option value="0" selected>Seleccione el tipo de equipo</option>
                          @foreach($equipos as $equipo)
                          <option value="{{$equipo->id}}">{{$equipo->descripcion}}</option>

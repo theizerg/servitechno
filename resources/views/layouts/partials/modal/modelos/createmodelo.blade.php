@@ -3,48 +3,35 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="formModal">Agregar marca</h5>
+                <h5 class="modal-title" id="formModal">Agregar nuevo modelo</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                {!! Form::model(['route' => ['modelos.store'],'method' => 'POST']) !!}
+                {!! Form::open(['url' => ['/modelos/guardarajax'],'method' => 'POST','id'=>'formodelo']) !!}
                   <div class="form-group">
                     <label>Descripción del modelo</label>
                     <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="fab fa-apple"></i>
-                        </div>
-                      </div>
+                      
                       <input type="text" class="form-control" placeholder="Descripción del modelo"
                        name="descripcion">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label>Tipo de equipo</label>
+                    <label>Marcas</label>
                      <div class="input-group">
-                       <div class="input-group-prepend">
-                         <div class="input-group-text">
-                           <i class="fas fa-lock"></i>
-                         </div>
-                       </div>
+                      
                        @php
                        $marcas =App\Models\Marcas::where('organismo_id',\Auth::user()->organismo_id)
                        ->where('sucursal_id',\Auth::user()->sucursal_id)
-                       ->get();
+                       ->pluck('descripcion','id');
                        @endphp
-                       <select name="marca_id" class="form-control">
-                         <option value="0" selected>Seleccione la marca del modelo</option>
-                         @foreach($marcas as $marca)
-                         <option value="{{$marca->id}}">{{$marca->descripcion}}</option>
-                         @endforeach
-                       </select>
+                       {!! Form::select('marca_id', $marcas, old('marca_id'), ['class' => 'form-control select2 ','data-width'=>'100%','placeholder' => '-- Seleccione un dispositivo  --','id'=>'tipoequipos']) !!}
                      </div>
                    </div>
                   <div class="form-group">
-                  <label class="font-weight-bolder" for="status">Estado de la marca</label>
+                  <label class="font-weight-bolder" for="status">Estado del modelo</label>
                   <div class="checkbox icheck">
                     <label class="font-weight-bolder">
                       <input type="radio" name="status" value="1" checked> Activa&nbsp;&nbsp;
@@ -67,4 +54,3 @@
             </div>
           </div>
         </div>
- 

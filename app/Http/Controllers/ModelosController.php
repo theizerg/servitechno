@@ -47,6 +47,35 @@ class ModelosController extends Controller
     }
 
 
+     public function guardarajax(Request $request)
+    {   
+        
+        $modelo = new  Modelos();
+        $modelo->descripcion = $request->descripcion;
+        $modelo->marca_id = $request->marca_id;
+        $modelo->status = $request->status;
+        $modelo->organismo_id = \Auth::user()->organismo_id;
+        $modelo->sucursal_id = \Auth::user()->sucursal_id;
+        $modelo->fecha = date('d/m/Y H:m:s');
+
+        $modelo->save();
+
+       
+        if ($modelo) {
+          
+
+
+        $id = $modelo->id;
+        $descripcion = $modelo->descripcion;
+
+        return compact('id','descripcion');
+       }
+
+
+
+    }
+
+
     public function update(Request $request, $id)
     {   
         //dd($request);

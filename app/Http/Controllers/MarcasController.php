@@ -48,6 +48,36 @@ class MarcasController extends Controller
     }
 
 
+    public function guardarajax(Request $request)
+    {   
+        
+        $marca = new  Marcas();
+        $marca->descripcion = $request->descripcion;
+        $marca->tipo_equipo_id = $request->tipo_equipo_id;
+        $marca->status = $request->status;
+        $marca->organismo_id = \Auth::user()->organismo_id;
+        $marca->sucursal_id = \Auth::user()->sucursal_id;
+        $marca->fecha = date('d/m/Y H:m:s');
+
+        $marca->save();
+
+        if ($marca) {
+            $notification = array(
+            'message' => '¡Datos ingresados!',
+            'alert-type' => 'success'
+        );
+        
+        $id = $marca->id;
+        $descripcion= $marca->descripcion;
+
+        return compact('id','descripcion');
+       }
+
+
+
+    }
+
+
     public function update(Request $request, $id)
     {   
         //dd($request);

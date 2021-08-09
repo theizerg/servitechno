@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Clientes;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
@@ -33,9 +33,55 @@ class ClientesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function guardarajax(Request $request)
     {
-        //
+        $cliente = new Cliente();
+
+        $cliente->name = $request->name;
+        $cliente->telefono = $request->telefono;
+        $cliente->organismo_id = \Auth::user()->organismo_id;
+        $cliente->sucursal_id = \Auth::user()->sucursal_id;
+
+        $cliente->save();
+        if ($cliente) {
+            
+            $notification = array(
+            'message' => '¡Datos ingresados!',
+            'alert-type' => 'success'
+        );
+        
+        $id = $cliente->id;
+        $name = $cliente->name;
+        $telefono = $cliente->telefono;
+        
+        return compact('name','id','telefono');  
+
+        }
+    }
+
+
+      public function guardar(Request $request)
+    {
+        $cliente = new Cliente();
+
+        $cliente->name = $request->name;
+        $cliente->telefono = $request->telefono;
+        $cliente->organismo_id = \Auth::user()->organismo_id;
+        $cliente->sucursal_id = \Auth::user()->sucursal_id;
+
+        $cliente->save();
+        if ($cliente) {
+            
+            $notification = array(
+            'message' => '¡Datos ingresados!',
+            'alert-type' => 'success'
+        );
+        
+    
+        
+        return redirect()->back()->with($notification); 
+
+        }
     }
 
     /**

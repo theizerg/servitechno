@@ -22,7 +22,7 @@
                $equipos = App\Models\EstadoServicio::get();
                @endphp
                <select name="tipo_equipo_id" class="form-control">
-                 <option value="0" selected>Seleccione el tipo de equipo</option>
+                 <option value="0" selected>Seleccione el estado de la orden de servico</option>
                  @foreach($equipos as $equipo)
                  <option value="{{$equipo->id}}">{{$equipo->descripcion}}</option>
                  @endforeach

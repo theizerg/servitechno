@@ -1,11 +1,11 @@
 <ul class="sidebar-menu">
  <li class="menu-header">Punto de venta</li>
 <li class="dropdown ">
-  <a href="{{url('/')}}" class="nav-link "><i data-feather="home"></i><span>Inicio</span></a>
+  <a href="{{url('/')}}" class="nav-link active show"><i data-feather="home"></i><span>Inicio</span></a>
 </li>
- <li class="dropdown ">
+ <li class="dropdown active show">
   @can('VerUsuario')
-  <a href="#" class="menu-toggle nav-link has-dropdown "><i
+  <a href="#" class="menu-toggle nav-link has-dropdown toggled active"><i
       data-feather="settings"></i><span>Administración</span></a>
      
      @can('VerUsuario')
@@ -37,13 +37,13 @@
     </ul>
     @endcan
   </li>
-  <li class="dropdown ">
+  <li class="dropdown active show">
   <a href="#" class="menu-toggle nav-link has-dropdown"><i
       data-feather="settings"></i><span>Registros principales</span></a>
-    @can('VerMarca')
+    @can('VerTipoEquipos')
       <ul class="dropdown-menu">
         <li class="dropdown">
-            @can('VerMarca')
+            @can('VerTipoEquipos')
               <a href="{{url('tipoequipos')}}"><i class="fas fa-laptop"></i>Tipo de equipos</a>
             @endcan
       </li>
@@ -71,13 +71,13 @@
       <ul class="dropdown-menu">
         <li class="dropdown">
             @can('VerTipoReparaciones')
-              <a href="{{url('tiporeparaciones')}}"><i class="fas fa-server"></i>Servicios</a>
+              <a href="{{url('tiporeparaciones')}}"><i class="fas fa-server"></i>Tipo de reparaciones</a>
             @endcan
       </li>
     </ul>
     @endcan
   </li>
-  <li class="dropdown  ">
+  <li class="dropdown active show ">
     <a href="#" class="menu-toggle nav-link has-dropdown"><i
         data-feather="settings"></i><span>Punto de venta</span></a>
          @can('VerCaja')
@@ -117,7 +117,7 @@
          </ul>
     @endcan
   </li>
-  <li class="dropdown  ">
+  <li class="dropdown active show ">
     <a href="#" class="menu-toggle nav-link has-dropdown"><i
         data-feather="settings"></i><span>Reparaciones</span></a>
          @can('VerReparaciones')

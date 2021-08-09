@@ -72,7 +72,11 @@
       <div class="main-content">
         
             @yield('content')
+        
 
+
+
+         @include('layouts.partials.modal.clientes.createcliente')
          @include('layouts.partials.modal.roles.createrole')
          @include('layouts.partials.modal.ordenservicio.createorden')
          @include('layouts.partials.modal.tiporeparacion.createtiporeparacion')
@@ -81,6 +85,7 @@
          @include('layouts.partials.modal.modelos.createmodelo')
          @include('layouts.partials.modal.usuario.createmodal')
          @include('layouts.partials.modal.organismo.modalorganismocreate')
+
         
 
         

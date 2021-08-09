@@ -27,7 +27,7 @@ $.fn.eventos = function(){
       $.fn.get_telefono(cliente_id);
       
     }else{
-      console.log('epa selecciona un proyecto valido');
+      console.log('epa selecciona un dato valido');
     }
 
   });
@@ -42,7 +42,7 @@ $.fn.eventos = function(){
       $.fn.get_marca(tipo_equipo_id);
       
     }else{
-      console.log('epa selecciona un proyecto valido');
+      console.log('epa selecciona un dato valido');
     }
 
   });
@@ -57,7 +57,7 @@ $.fn.eventos = function(){
       $.fn.get_modelos(marca_id);
       
     }else{
-      console.log('epa selecciona un proyecto valido');
+      console.log('epa selecciona un dato valido');
     }
 
   });
@@ -77,6 +77,7 @@ $.fn.get_telefono = function(cliente_id){
         $('#telefono_cliente').html('<option value="0"> Seleccione </option>');
         $(result).each(function( index, element ) {
           $('#telefono_cliente').val(element.telefono);
+         
       
         });
       })

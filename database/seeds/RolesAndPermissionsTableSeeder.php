@@ -94,11 +94,19 @@ class RolesAndPermissionsTableSeeder extends Seeder
                                  'EditarModelo',
                                  'EliminarModelo',
 
-                                /* TipoReparaciones */
+                                /* Tipo de Reparaciones */
                                 'VerTipoReparaciones',
                                 'RegistrarTipoReparaciones',
                                 'EditarTipoReparaciones',
                                 'EliminarTipoReparaciones',
+
+                                /* Tipo de equipos */
+                                'VerTipoEquipos',
+                                'RegistrarTipoEquipos',
+                                'EditarTipoEquipos',
+                                'EliminarTipoEquipos',
+
+
 
                                  /* Cajas */
                                  'VerCaja',

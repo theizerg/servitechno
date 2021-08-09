@@ -372,6 +372,7 @@ class AdminTableSeeder extends Seeder
           \DB::table('clientes')->insert([
             'name' => 'Carlos Miguel',
             'telefono' => '04244224554',
+            'documento'=> 'v-26632067',
             'organismo_id' => 1,
             'sucursal_id' => 1,
             
@@ -380,6 +381,7 @@ class AdminTableSeeder extends Seeder
           \DB::table('clientes')->insert([
             'name' => 'Elida Lugo',
             'telefono' => '04241234554',
+            'documento'=> 'v-6839414',
             'organismo_id' => 1,
             'sucursal_id' => 1,
             
@@ -388,6 +390,7 @@ class AdminTableSeeder extends Seeder
            \DB::table('clientes')->insert([
             'name' => 'Arminda Lugo',
             'telefono' => '04241703465',
+            'documento'=> 'v-25212293',
             'organismo_id' => 1,
             'sucursal_id' => 1,
             

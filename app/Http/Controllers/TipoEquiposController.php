@@ -43,6 +43,35 @@ class TipoEquiposController extends Controller
 
     }
 
+     public function guardarajax(Request $request)
+    {   
+        
+        $tipoequipo = new  TipoEquipos();
+        $tipoequipo->descripcion = $request->descripcion;
+        $tipoequipo->status = $request->status;
+        $tipoequipo->organismo_id = \Auth::user()->organismo_id;
+        $tipoequipo->sucursal_id = \Auth::user()->sucursal_id;
+        $tipoequipo->fecha = date('d/m/Y H:m:s');
+
+        $tipoequipo->save();
+
+        if ($tipoequipo) {
+            $notification = array(
+            'message' => '¡Datos ingresados!',
+            'alert-type' => 'success'
+        );
+        
+        $id = $tipoequipo->id;
+        $descripcion = $tipoequipo->descripcion;
+
+        return compact('id','descripcion');
+
+       }
+
+
+
+    }
+
 
     public function update(Request $request, $id)
     {   

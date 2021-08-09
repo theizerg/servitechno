@@ -101,6 +101,7 @@ Route::get('/ganancias','GananciaContoller@ganancias');
 Route::get('/clientes', 'ClientesController@index');
 Route::get('/clientes/nuevo', 'ClientesController@nuevo');
 Route::post('/clientes/guardar', 'ClientesController@guardar');
+Route::post('/clientes/guardarajax', 'ClientesController@guardarajax');
 Route::get('/clientes/buscar', 'ClientesController@buscar');
 Route::get('/clientes/detalle/{clienteId}', 'ClientesController@detalle');
 
@@ -136,7 +137,7 @@ Route::get('/clientes/detalle/{clienteId}', 'ClientesController@detalle');
 #############################################################################################
   
 Route::resource('/marcas', 'MarcasController');
-
+Route::post('/marcas/guardarajax', 'MarcasController@guardarajax');
 #############################################################################################
 #############################################################################################
 #############################################################################################
@@ -150,7 +151,7 @@ Route::resource('/marcas', 'MarcasController');
 #############################################################################################
 
 Route::resource('/modelos', 'ModelosController');
-
+Route::post('/modelos/guardarajax', 'ModelosController@guardarajax');
 #############################################################################################
 #############################################################################################
 #############################################################################################
@@ -181,7 +182,7 @@ Route::resource('tiporeparaciones', 'TipoReparacionesController');
 
 
 Route::resource('tipoequipos', 'TipoEquiposController');
-
+Route::post('tipoequipos/guardarajax', 'TipoEquiposController@guardarajax');
 
 #############################################################################################
 #############################################################################################

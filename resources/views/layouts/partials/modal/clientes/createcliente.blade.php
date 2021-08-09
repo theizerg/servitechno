@@ -1,37 +1,41 @@
-<div class="modal fade" id="createModalTipoEquipo" tabindex="-1" role="dialog" aria-labelledby="formModal"
+<div class="modal fade" id="createModalCliente" tabindex="-1" role="dialog" aria-labelledby="formModal"
           aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="formModal">Registrar nuevo tipo de reparación</h5>
+                <h5 class="modal-title" id="formModal">Agregar cliente</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                {!! Form::open(['url' => ['/tipoequipos/guardarajax'],'method' => 'POST','id'=>'tipoequipo']) !!}
+                {!! Form::open(['url' => ['/clientes/guardarajax'],'method' => 'POST','id'=>'formcliente']) !!}
                   <div class="form-group">
-                    <label>Descripción del equipo</label>
+                    <label>Nombre y apellido del cliente</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="fab fa-apple"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" placeholder="Descripción del equipo"
-                       name="descripcion">
+                      <input type="text" id="nombrecliente" class="form-control" placeholder="Nombre  y apellido del cliente"
+                       name="name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Teléfono del cliente</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fab fa-apple"></i>
+                        </div>
+                      </div>
+                      <input type="text" id="telefonocliente"  class="form-control" placeholder="Teléfono del cliente"
+                       name="telefono">
                     </div>
                   </div>
                  
-                  <div class="form-group">
-                  <label class="font-weight-bolder" for="status">Estado del equipo</label>
-                  <div class="checkbox icheck">
-                    <label class="font-weight-bolder">
-                      <input type="radio" name="status" value="1" checked> Activa&nbsp;&nbsp;
-                      <input type="radio" name="status" value="0"> Deshabilitada
-                    </label>
-                  </div>
-                </div>
+                  
                  
                   <div class="row">
                     <div class="col-sm-12">
@@ -47,4 +51,3 @@
             </div>
           </div>
         </div>
- 

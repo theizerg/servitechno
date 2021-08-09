@@ -10,8 +10,10 @@
         
         <div class="card-body">
           <div class="btn-group">
-            <a href="{{ ('/ordenservicios/nuevo') }}"  class="btn btn-lg blue darken-4"><i class="mdi mdi-plus mt-2 text-white" ></i> <small class="text-white" data-toggle="tooltip" data-placement="top"
-                            title="Registrar nueva orden de servicio.">Nueva orden de servicio</small></a>
+            <a href="{{ ('/ordenservicios') }}"  class="btn btn-lg blue darken-4 disabled"><i class="mdi mdi-plus mt-2 text-white " ></i> <small class="text-white" data-toggle="tooltip" data-placement="top"
+                            title="Registrar nueva orden de servicio.">Listado de órdenes de servicios</small></a>
+            <a href="{{ ('/ordenservicios/nuevo') }}"  class="btn btn-lg blue darken-4"><i class="mdi mdi- mt-2 text-white" ></i> <small class="text-white" data-toggle="tooltip" data-placement="top"
+            title="Registrar nueva orden de servicio.">Nueva orden de servicio</small></a>
           </div>
           <div class="table-responsive mt-5">
             <table class="table table-striped table-hover" id="tableExport" style="width:100%;">

@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 @section('title', 'ORDEN DE SERVICIO')
 @section('content')
-<div class="row">   
+<div class="content">
+  <div class="row">   
     <div class="col-12">
       <div class="card card-line-primary">
         <div class="card-header">
@@ -19,54 +20,98 @@
             </li>
           </ul><br>
            {!! Form::open(['url' => ['ordenservicios/guardar'],'method' => 'POST','id'=>'main-form']) !!}
-            <h3 class="text-center"><br>
+            <h3 class="text-center  mt-1 mb-4"><br>
               Datos del cliente
             </h3>
            <div class="row">
             <div class="col-sm-6 form-group ">
-            <label>Cliente</label><br>
-             @php
-                 $clientes = App\Models\Cliente::where('organismo_id',\Auth::user()->organismo_id)
-                 ->where('sucursal_id', \Auth::user()->sucursal_id)
-                 ->get()
-                @endphp
-                   <select class="form-control select2" name="cliente_id" id="cliente">
+              <a href="#createModalCliente" class="btn-link" data-toggle="modal" data-target="#createModalCliente" style="color:green; font-size:20px;">
+                <small>
+                  <i class="fa fa-plus" aria-hidden="true">
+                    Clientes
+                  </i>
+                </small>
+              </a>
+            @php
+               $clientes = App\Models\Cliente::where('organismo_id',\Auth::user()->organismo_id)
+               ->where('sucursal_id', \Auth::user()->sucursal_id)
+               ->get()
+              @endphp
+              <select class="form-control select2" name="cliente_id" id="cliente">
+                   <option value="0">-- Selecciona un cliente --</option>
+                  @foreach ($clientes as $cliente)
+                    <option value="{{ $cliente->id }}" >{{ $cliente->name }}</option>
 
-                    @foreach ($clientes as $cliente)
-                      <option value="{{ $cliente->id }}" >{{ $cliente->name }}</option>
-                    @endforeach
-                  </select>
+                  @endforeach
+              </select>
             </div>
             <div class="col-sm-6 form-group ">
               <label>Teléfono del cliente</label>
               <input type="text" name="telefono" id="telefono_cliente" class="form-control" disabled>
             </div>
+
+           
             </div>
-            <h3 class="text-center mt-5">
+            <h3 class="text-center mt-1 mb-4">
               Datos de identificación del equipo.
             </h3>
             <div class="row">
               <div class="col-sm-4 form-group">
-              <label>Dipositivos</label>
+              <label for="txtNombre" class="control-label ">
+              <a href="#createModalTipoEquipo" class="btn-link" data-toggle="modal" data-target="#createModalTipoEquipo" style="color:green; font-size:20px;">
+                <small>
+                  <i class="fa fa-plus" aria-hidden="true">
+                    Dispositivos
+                  </i>
+                </small>
+              </a>
+            </label><br>
                 @php
                  $tipoequipos = App\Models\TipoEquipos::where('organismo_id',\Auth::user()->organismo_id)
                  ->where('sucursal_id', \Auth::user()->sucursal_id)
                  ->pluck('descripcion','id')
                 @endphp
-                 {!! Form::select('tipo_equipo_id', $tipoequipos, old('tipo_equipo_id'), ['class' => 'form-control select2','placeholder' => '-- Seleccione un dispositivo  --','id'=>'tipoequipos']) !!}
+                 {!! Form::select('tipo_equipo_id', $tipoequipos, old('tipo_equipo_id'), ['class' => 'form-control select2','placeholder' => 'Seleccione','id'=>'tipoequipos']) !!}
                 </div>
                   <div class="col-sm-4 form-group">
-                   <label>Marcas</label><br>
+                    <label for="txtNombre" class="control-label ">
+                  
+                  <a href="#createModalMarca" class="btn-link" data-toggle="modal" data-target="#createModalMarca"style="color:green; font-size:20px;">
+                    <small>
+                      <i class="fa fa-plus" aria-hidden="true">
+                        Marcas
+                      </i>
+                    </small>
+                  </a>
+               </label><br>
                     <select class="form-control select2 " name="marca_id" id="marcas">
                    </select>
               </div>
               <div class="col-sm-4 form-group">
-                <label>Modelos</label><br>
+                 <label for="txtNombre" class="control-label ">
+                 
+                  <a href="#createModalModelo" class="btn-link" data-toggle="modal" data-target="#createModalModelo"style="color:green; font-size:20px;">
+                    <small>
+                      <i class="fa fa-plus" aria-hidden="true">
+                        Modelos
+                      </i>
+                    </small>
+                  </a>
+               </label><br>
                   <select class="form-control select2 " name="modelo_id" id="modelos">
                   </select>
               </div>
               <div class="col-sm-4 form-group mt-4">
-                <label>Tipo de reparaciones</label><br>
+                <label for="txtNombre" class="control-label ">
+                 
+                  <a href="#createModalTipoReparacion" class="btn-link" data-toggle="modal" data-target="#createModalTipoReparacion"style="color:green; font-size:20px;">
+                    <small>
+                      <i class="fa fa-plus" aria-hidden="true">
+                        Tipo de reparaciones
+                      </i>
+                    </small>
+                  </a>
+               </label><br>
                  @php
                  $tiporeparaciones = App\Models\TipoReparaciones::where('organismo_id',\Auth::user()->organismo_id)
                  ->where('sucursal_id', \Auth::user()->sucursal_id)
@@ -136,15 +181,11 @@
       </div>
     </div>
   </div>
+</div>
 
 @endsection
 @push('scripts')
-  <script>
-      // Select2
- 
-    $(".select2").select2();
 
-  </script>
   <script>
 $(function () {
    $.validator.setDefaults({
@@ -234,6 +275,9 @@ $(function () {
 });
 </script>
 
-  </script>
-  <script type="text/javascript" src="{{ asset('js/admin/orden/form.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/admin/orden/cliente.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/admin/orden/tipoequipos.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/admin/orden/marcas.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/admin/orden/modelos.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/admin/orden/form.js') }}"></script>
 @endpush

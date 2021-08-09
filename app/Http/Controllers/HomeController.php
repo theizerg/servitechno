@@ -24,7 +24,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-       if (\Auth::user()->hasRole('Super Administrador')) {
+
+        $role = \Auth::user()->roles;
+
+        foreach ($role as $key => $value) {
+            
+            
+        }
+
+       if (\Auth::user()->hasRole($value->name)) {
            return view('admin.home.index');
        }
        else{
